@@ -15,6 +15,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 void OnPlayerHurt(Player *player, short dmgHealth, bool fatal)
 {
     player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
+    print("test");
 }
 
 void OnPluginStart()
