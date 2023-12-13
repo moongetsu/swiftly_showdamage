@@ -17,7 +17,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
-    print(FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
+    int method = config->Fetch<int>("showdamage.method");
     if (method == 1)
     {
         player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
