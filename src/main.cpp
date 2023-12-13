@@ -1,18 +1,21 @@
 #include <swiftly/swiftly.h>
 #include <swiftly/server.h>
 #include <swiftly/gameevents.h>
+#include <swiftly/configuration.h>
 
-Server server = nullptr;
-PlayerManagerg_playerManager = nullptr;
+Server *server = nullptr;
+PlayerManager *g_playerManager = nullptr;
+Configuration *config = nullptr;
 
-void OnProgramLoad(const char pluginName, const charmainFilePath)
+void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 {
     Swiftly_Setup(pluginName, mainFilePath);
     server = new Server();
     g_playerManager = new PlayerManager();
+    config = new Configuration();
 }
 
-void OnPlayerHurt(Player player, Playerattacker, short dmgHealth, short dmgArmor, short hitgroup, const char weapon, bool fatal)
+void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
     int method = config->Fetch<int>("showdamage.method");
     if (method == 0)
@@ -33,17 +36,17 @@ void OnPluginStop()
 {
 }
 
-const charGetPluginAuthor()
+const char *GetPluginAuthor()
 {
     return "moongetsu";
 }
 
-const char GetPluginVersion()
+const char *GetPluginVersion()
 {
     return "1.0.0";
 }
 
-const charGetPluginName()
+const char *GetPluginName()
 {
     return "Show Damage (multi methods)";
 }
