@@ -20,12 +20,12 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     int method = config->Fetch<int>("showdamage.method");
     if (method == 1)
     {
-        player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
+        attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
         print("metoda 1 merge frate \n");
     }
     else if (method == 2)
     {
-        player->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
+        attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
         print("metoda 2 merge frate \n");
     }
 }
