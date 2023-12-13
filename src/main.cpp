@@ -17,32 +17,32 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
-    int method = config->Fetch<int>("showdamage.method");
-    if (method == 0)
+    int type = config->Fetch<bool>("showdamage.center");
+    if (type == true)
     {
         attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
-        print("metoda 0 merge frate \n");
+        print("centerul merge frate \n");
     }
-    else if (method == 1)
+    else if (type == false)
     {
         attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-        print("metoda 1 merge frate \n");
+        print("mesajul in chat merge frate \n");
     }
 }
 
 void OnPluginStart()
 {
-    int method = config->Fetch<int>("showdamage.method");
-    if (method == 0)
+    int type = config->Fetch<bool>("showdamage.center");
+    if (type == true)
     {
        print("------------------------------------------------------- \n");
-       print("Acum este setata metoda cu numarul 0 \n");
+       print("Acum este setat tipul pe center \n");
        print("------------------------------------------------------- \n");
     }
-    else if (method == 1)
+    else if (type == false)
     {
        print("------------------------------------------------------- \n");
-       print("Acum este setata metoda cu numarul 1 \n");
+       print("Acum este setat tipul pe chat \n");
        print("------------------------------------------------------- \n");
     }
 }
