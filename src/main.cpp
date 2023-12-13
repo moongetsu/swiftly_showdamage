@@ -15,6 +15,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
     print("%s took %d health from %s with weapon %s.\n", attacker->GetName(), dmgHealth, player->GetName(), weapon);
+    player->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
 }
 
 void OnPluginStart()
