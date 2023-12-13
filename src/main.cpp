@@ -37,7 +37,7 @@ const char *GetPluginVersion()
 
 const char *GetPluginName()
 {
-    return "Show Damage (center)";
+    return "Show Damage";
 }
 
 const char *GetPluginWebsite()
