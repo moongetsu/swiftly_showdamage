@@ -18,30 +18,31 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
     print(FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-    int method = config->Fetch<int>("showdamage.method");
-    if (method == 0)
+    if (method == 1)
     {
         player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
+        print("metoda 1 merge frate \n");
     }
-    else if (method == 1)
+    else if (method == 2)
     {
         player->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
+        print("metoda 2 merge frate \n");
     }
 }
 
 void OnPluginStart()
 {
     int method = config->Fetch<int>("showdamage.method");
-    if (method == 0)
-    {
-       print("------------------------------------------------------- \n");
-       print("Acum este setata metoda cu numarul 0 \n");
-       print("------------------------------------------------------- \n");
-    }
-    else if (method == 1)
+    if (method == 1)
     {
        print("------------------------------------------------------- \n");
        print("Acum este setata metoda cu numarul 1 \n");
+       print("------------------------------------------------------- \n");
+    }
+    else if (method == 2)
+    {
+       print("------------------------------------------------------- \n");
+       print("Acum este setata metoda cu numarul 2 \n");
        print("------------------------------------------------------- \n");
     }
 }
