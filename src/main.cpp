@@ -14,7 +14,6 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
-    player->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.chattext"), dmgHealth, player->GetName());
     player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
 }
 
