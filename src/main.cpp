@@ -21,30 +21,15 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     if (type == true)
     {
         attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
-        print("centerul merge frate \n");
     }
     else if (type == false)
     {
         attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-        print("mesajul in chat merge frate \n");
     }
 }
 
 void OnPluginStart()
 {
-    int type = config->Fetch<bool>("showdamage.center");
-    if (type == true)
-    {
-       print("------------------------------------------------------- \n");
-       print("Acum este setat tipul pe center \n");
-       print("------------------------------------------------------- \n");
-    }
-    else if (type == false)
-    {
-       print("------------------------------------------------------- \n");
-       print("Acum este setat tipul pe chat \n");
-       print("------------------------------------------------------- \n");
-    }
 }
 
 void OnPluginStop()
