@@ -1,0 +1,10 @@
+{
+    "centertext": {
+        "en": "You did <font color='#00FF00'>%d</font> damage to <font color='#00FF00'>%s</font>",
+        "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font>"
+    },
+    "messagetext": {
+        "en": "{lime}[Swiftly] {default}You did {lime}%d {default}damage to {lime}%s{default}!",
+        "ro": "{lime}[Swiftly] {default}I-ai dat {lime}%d {default}damage lui {lime}%s{default}!"
+    }
+}
