@@ -12,9 +12,9 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     g_playerManager = new PlayerManager();
 }
 
-void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short hitgroup, bool fatal)
+void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, bool fatal)
 {
-    g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName(), hitgroup);
+    g_playerManager->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
 }
 
 void OnPluginStart()
