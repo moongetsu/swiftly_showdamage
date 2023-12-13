@@ -24,7 +24,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     }
     else if (method == 1)
     {
-        player->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
+        player->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
     }
 }
 
