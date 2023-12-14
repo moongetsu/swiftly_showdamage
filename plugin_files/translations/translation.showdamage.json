@@ -3,8 +3,30 @@
         "en": "You did <font color='#00FF00'>%d</font> damage to <font color='#00FF00'>%s</font>",
         "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font>"
     },
+    "centertext.health": {
+        "en": "You did <font color='#00FF00'>%d</font> damage to <font color='#00FF00'>%s</font>",
+        "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font>"
+    },
+    "centertext.dead": {
+        "en": "You killed <font color='#00FF00'>%s</font>",
+        "ro": "L-ai ucis pe <font color='#00FF00'>%s</font>"
+    },
+
     "messagetext": {
         "en": "{lime}[Swiftly] {default}You did {lime}%d {default}damage to {lime}%s{default}!",
         "ro": "{lime}[Swiftly] {default}I-ai dat {lime}%d {default}damage lui {lime}%s{default}!"
+    },
+    "messagetext.health": {
+        "en": "{lime}[Swiftly] {default}You did {lime}%d {default}damage to {lime}%s{default} ({lime}%d {default}HP)!",
+        "ro": "{lime}[Swiftly] {default}I-ai dat {lime}%d {default}damage lui {lime}%s{default} ({lime}%d {default}HP)!"
+    },
+    "messagetext.dead": {
+        "en": "{lime}[Swiftly] {default}You killed {lime}%s{default}!",
+        "ro": "{lime}[Swiftly] {default}L-ai ucis {default}pe {lime}%s{default}!"
+    },
+
+    "consoletext": {
+        "en": "%d damage to %s \n",
+        "ro": "%d damage lui %s \n"
     }
 }
