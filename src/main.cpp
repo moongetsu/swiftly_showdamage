@@ -17,8 +17,6 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
-    print("OnPlayerHurt is working\n");
-
     int showhealth = config->Fetch<bool>("showdamage.showremaininghealth");
 
     if (showhealth == false)
@@ -27,12 +25,10 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         if (messagetype == 0)
         {
             attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
-            print("Metoda 0 merge frate \n");
         }
         else if (messagetype == 1)
         {
             attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-            print("Metoda 1 merge frate \n");
         }
     }
     else if (showhealth == true)
@@ -43,45 +39,17 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         if (messagetype == 0)
         {
             attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
-            print("Metoda 0 merge frate \n");
         }
         else if (messagetype == 1)
         {
             attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
-            print("Metoda 1 merge frate \n");
         }
     }
 }
 
 void OnPluginStart()
 {
-    int messagetype = config->Fetch<int>("showdamage.method");
-    if (messagetype == 0)
-    {
-       print("------------------------------------------------------- \n");
-       print("Acum este setata metoda cu numarul 0 \n");
-       print("------------------------------------------------------- \n");
-    }
-    else if (messagetype == 1)
-    {
-       print("------------------------------------------------------- \n");
-       print("Acum este setata metoda cu numarul 1 \n");
-       print("------------------------------------------------------- \n");
-    } 
 
-    int showhealth = config->Fetch<bool>("showdamage.showremaininghealth");
-    if (showhealth == false)
-    {
-       print("------------------------------------------------------- \n");
-       print("ShowHealth e pe false \n");
-       print("------------------------------------------------------- \n");
-    }
-    else if (showhealth == true)
-    {
-       print("------------------------------------------------------- \n");
-       print("ShowHealth e pe true \n");
-       print("------------------------------------------------------- \n");
-    } 
 }
 
 void OnPluginStop()
