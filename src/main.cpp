@@ -40,7 +40,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         {
             if (remainingHealth <= 0)
             {
-                attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health.dead"), player->GetName());
+                attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health.dead"), dmgHealth, player->GetName());
             }
             else
             {
@@ -51,7 +51,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         {
             if (remainingHealth <= 0)
             {
-                attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health.dead"), player->GetName());
+                attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health.dead"), dmgHealth, player->GetName());
             }
             else
             {
