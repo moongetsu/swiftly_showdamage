@@ -32,14 +32,9 @@
 * For example if the method is on `0`, the plugin will print the message in a center box. If the center is on `1`, the plugin will print the message in the chat.
 
 ### Preview 📷
-Chat Prints:
 ![image](https://github.com/moongetsu/swiftly_showdamage/assets/111883135/2b9f2375-51ee-4d45-bd82-579bfa3fd7c5)
-
-Center Prints:
 ![image](https://github.com/moongetsu/swiftly_showdamage/assets/111883135/466f64cc-3367-4cbf-a5bf-4f9013e1a3ca)
 ![image](https://github.com/moongetsu/swiftly_showdamage/assets/111883135/48646fed-a7a5-433e-a1ea-d1075aeebd83)
-
-Console Prints:
 ![image](https://github.com/moongetsu/swiftly_showdamage/assets/111883135/0da4a571-94ad-4edd-8cbf-5c9ef9e4b49f)
 
 
