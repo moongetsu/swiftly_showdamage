@@ -34,13 +34,29 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     else if (showhealth == true)
     {
         int messagetype = config->Fetch<int>("showdamage.method");
+        int remainingHealth = std::max(player->health->Get(), 0);
+
         if (messagetype == 0)
         {
-            attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), player->health->Get());
+            if (remainingHealth <= 0)
+            {
+                attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health.dead"), player->GetName());
+            }
+            else
+            {
+                attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
+            }
         }
         else if (messagetype == 1)
         {
-            attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), player->health->Get());
+            if (remainingHealth <= 0)
+            {
+                attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health.dead"), player->GetName());
+            }
+            else
+            {
+                attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), remainingHealth);
+            }
         }
     }
 }
