@@ -17,6 +17,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, int fatal)
 {
+    print("OnPlayerHurt is working\n");
     int messagetype = config->Fetch<int>("showdamage.method");
     if (messagetype == 0)
     {
