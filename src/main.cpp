@@ -15,9 +15,9 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     config = new Configuration();
 }
 
-void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
+void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, int fatal)
 {
-    int messagetype = config->Fetch<bool>("showdamage.method");
+    int messagetype = config->Fetch<int>("showdamage.method");
     if (messagetype == 0)
     {
         attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
@@ -30,7 +30,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
 
 void OnPluginStart()
 {
-    int messagetype = config->Fetch<bool>("showdamage.method");
+    int messagetype = config->Fetch<int>("showdamage.method");
     if (messagetype == 0)
     {
        print("------------------------------------------------------- \n");
