@@ -17,12 +17,12 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
 
 void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
-    int type = config->Fetch<bool>("showdamage.center");
-    if (type == true)
+    int type = config->Fetch<bool>("showdamage.method");
+    if (type == 0)
     {
         attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
     }
-    else if (type == false)
+    else if (type == 1)
     {
         attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
     }
@@ -30,6 +30,19 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
 
 void OnPluginStart()
 {
+    int type = config->Fetch<bool>("showdamage.method");
+    if (type == 0)
+    {
+       print("------------------------------------------------------- \n");
+       print("Acum este setata metoda cu numarul 0 \n");
+       print("------------------------------------------------------- \n");
+    }
+    else if (type == 1)
+    {
+       print("------------------------------------------------------- \n");
+       print("Acum este setata metoda cu numarul 1 \n");
+       print("------------------------------------------------------- \n");
+    } 
 }
 
 void OnPluginStop()
