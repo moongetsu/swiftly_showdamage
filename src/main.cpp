@@ -42,7 +42,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         }
         else if (messagetype == 1)
         {
-            attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
+            attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), remainingHealth);
         }
     }
 }
