@@ -25,12 +25,10 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         if (messagetype == 0)
         {
             attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
-            attacker->SendMsg(HUD_PRINTCONSOLE, "test \n");
         }
         else if (messagetype == 1)
         {
             attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-            attacker->SendMsg(HUD_PRINTCONSOLE, "test \n");
         }
     }
     else if (showhealth == true)
@@ -47,7 +45,6 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
             else
             {
                 attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
-                attacker->SendMsg(HUD_PRINTCONSOLE, "test \n");
             }
         }
         else if (messagetype == 1)
@@ -59,7 +56,6 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
             else
             {
                 attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), remainingHealth);
-                attacker->SendMsg(HUD_PRINTCONSOLE, "test \n");
             }
         }
     }
