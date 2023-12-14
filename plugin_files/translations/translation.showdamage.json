@@ -4,8 +4,8 @@
         "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font>"
     },
     "centertext.health": {
-        "en": "You did <font color='#00FF00'>%d</font> damage to <font color='#00FF00'>%s</font>",
-        "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font>"
+        "en": "You did <font color='#00FF00'>%d</font> damage to <font color='#00FF00'>%s</font> (<font color='#00FF00'>%d</font> HP)",
+        "ro": "I-ai dat <font color='#00FF00'>%d</font> damage lui <font color='#00FF00'>%s</font> (<font color='#00FF00'>%d</font> HP)"
     },
     "centertext.dead": {
         "en": "You killed <font color='#00FF00'>%s</font>",
