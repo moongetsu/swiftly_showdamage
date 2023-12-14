@@ -15,7 +15,7 @@ void OnProgramLoad(const char *pluginName, const char *mainFilePath)
     config = new Configuration();
 }
 
-void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, int fatal)
+void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgArmor, short hitgroup, const char *weapon, bool fatal)
 {
     print("OnPlayerHurt is working\n");
 
@@ -37,7 +37,7 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     }
     else if (showhealth == true)
     {
-        short remainingHealth = 100 - dmgHealth;
+        short remainingHealth = player->health->Get() - dmgHealth;
 
         int messagetype = config->Fetch<int>("showdamage.method");
         if (messagetype == 0)
