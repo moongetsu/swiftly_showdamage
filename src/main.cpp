@@ -25,13 +25,11 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
         if (messagetype == 0)
         {
             attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
-            attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
             attacker->SendMsg(HUD_PRINTCONSOLE, FetchTranslation("showdamage.consoletext"), dmgHealth, player->GetName());
         }
         else if (messagetype == 1)
         {
             attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
-            attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
             attacker->SendMsg(HUD_PRINTCONSOLE, FetchTranslation("showdamage.consoletext"), dmgHealth, player->GetName());
         }
     }
@@ -45,12 +43,10 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
             if (remainingHealth <= 0)
             {
                 attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.dead"), player->GetName());
-                attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
             }
             else
             {
                 attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
-                attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
                 attacker->SendMsg(HUD_PRINTCONSOLE, FetchTranslation("showdamage.consoletext"), dmgHealth, player->GetName());
             }
         }
@@ -59,12 +55,10 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
             if (remainingHealth <= 0)
             {
                 attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.dead"), player->GetName());
-                attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
             }
             else
             {
                 attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), remainingHealth);
-                attacker->SendMsg(HUD_PRINTCONSOLE, "---------------------------------------------------------------- \n");
                 attacker->SendMsg(HUD_PRINTCONSOLE, FetchTranslation("showdamage.consoletext"), dmgHealth, player->GetName());
             }
         }
