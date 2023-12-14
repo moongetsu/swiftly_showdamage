@@ -21,10 +21,12 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     if (messagetype == 0)
     {
         attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext"), dmgHealth, player->GetName());
+        print("Metoda 0 merge frate \n");
     }
     else if (messagetype == 1)
     {
         attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext"), dmgHealth, player->GetName());
+        print("Metoda 1 merge frate \n");
     }
 }
 
