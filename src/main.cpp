@@ -33,16 +33,14 @@ void OnPlayerHurt(Player *player, Player *attacker, short dmgHealth, short dmgAr
     }
     else if (showhealth == true)
     {
-        short remainingHealth = player->health->Get() - dmgHealth;
-
         int messagetype = config->Fetch<int>("showdamage.method");
         if (messagetype == 0)
         {
-            attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), remainingHealth);
+            attacker->SendMsg(HUD_PRINTCENTER, FetchTranslation("showdamage.centertext.health"), dmgHealth, player->GetName(), player->health->Get());
         }
         else if (messagetype == 1)
         {
-            attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), remainingHealth);
+            attacker->SendMsg(HUD_PRINTTALK, FetchTranslation("showdamage.messagetext.health"), dmgHealth, player->GetName(), player->health->Get());
         }
     }
 }
